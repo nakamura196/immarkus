@@ -5,7 +5,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",
@@ -20,7 +21,8 @@
     "typescript": "^6.0.3",
     "vite": "^7.3.5",
     "vite-plugin-babel-macros": "^1.0.6",
-    "vite-plugin-static-copy": "^3.4.0"
+    "vite-plugin-static-copy": "^3.4.0",
+    "vitest": "^4.1.8"
   },
   "dependencies": {
     "@annotorious/plugin-boolean-operations": "^0.4.0",
