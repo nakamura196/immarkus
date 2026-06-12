@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { AppNavigationSidebar } from '@/components/AppNavigationSidebar';
 import { Separator } from '@/ui/Separator';
 import { ExportAnnotations } from './ExportAnnotations';
@@ -24,16 +25,18 @@ const NavListItem = (props: { path: string, label: string, active?: boolean }) =
 
 export const Export = (props: ExportProps) => {
 
+  const { t } = useTranslation('export');
+
   return (
     <>
       <AppNavigationSidebar />
 
       <main className="grow page export px-12 py-6 overflow-auto">
         <div>
-          <h1 className="text-xl font-semibold tracking-tight mb-2">Export</h1>
+          <h1 className="text-xl font-semibold tracking-tight mb-2">{t('title')}</h1>
 
           <p className="mt-1 text-sm leading-6">
-            Export your data in different export formats.
+            {t('description')}
           </p>
 
           <Separator className="mt-7 w-full mb-2" />
@@ -45,22 +48,22 @@ export const Export = (props: ExportProps) => {
               <ol>
                 <NavListItem 
                   path="/export/annotations" 
-                  label="Annotations" 
+                  label={t('nav.annotations')}
                   active={props.tab === 'annotations'} />
 
                 <NavListItem 
                   path="/export/relationships" 
-                  label="Relationships" 
+                  label={t('nav.relationships')}
                   active={props.tab === 'relationships'} />
 
                 <NavListItem 
                   path="/export/model" 
-                  label="Data Model" 
+                  label={t('nav.dataModel')}
                   active={props.tab === 'model'} />
 
                 <NavListItem
                   path="/export/metadata"
-                  label="Metadata"
+                  label={t('nav.metadata')}
                   active={props.tab === 'metadata'} />
               </ol>
             </nav>
